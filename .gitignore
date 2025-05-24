@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+#データはいらない
+data/raw/
+__pycache__/
+*.pkl
