@@ -1,0 +1,13 @@
+name: product_inspection_project
+
+conda_env: conda.yaml
+
+entry_points:
+  train:
+    parameters:
+      n_estimators: {type: int, default: 200}
+    command: "python train.py --n_estimators {n_estimators}"
+  predict:
+    parameters:
+      predict_date: {type: str, default: "auto"}
+    command: "python predict.py --predict_date {predict_date}"

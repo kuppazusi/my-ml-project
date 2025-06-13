@@ -1,0 +1,13 @@
+name: product_inspection_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - scikit-learn
+  - pandas
+  - pip
+  - pip:
+      - mlflow
+      - lightgbm
+      - prometheus_client

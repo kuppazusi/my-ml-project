@@ -1,0 +1,29 @@
+groups:
+  - name: batch-job-alerts
+    rules:
+      - alert: PrefectETLFailed
+        expr: batch_job_status{job="prefect_etl"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prefect ETL job failed"
+          description: "The Prefect ETL job has reported failure in the last 5 minutes."
+
+      - alert: MLTrainFailed
+        expr: batch_job_status{job="ml_train"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "ML Training failed"
+          description: "The ML training job has reported failure in the last 5 minutes."
+
+      - alert: MLPredictFailed
+        expr: batch_job_status{job="ml_predict"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prediction job failed"
+          description: "The ML prediction job has reported failure in the last 5 minutes."
